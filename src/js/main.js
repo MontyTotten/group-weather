@@ -3,7 +3,7 @@ var url = 'http://api.openweathermap.org/data/2.5/find?lat=34.0&lon=-81.0&cnt=10
 function toF (kelvin) {     
 	var result = 0;     
 	result = kelvin * 9/5 - 459.67;     
-	return result.toFixed(); 
+	return result.toFixed() + '\u00B0 F'; 
 };
 
 function degreeConv (value) {
@@ -26,12 +26,16 @@ function degreeConv (value) {
     }
 };
 
+function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
 
 var getWeatherInfo = function () {
 	$.ajax({
 		url: url,
 		success: function (results) {
-			console.log(results)
+			app(results.list);
+			console.log(results);
 		}
 	});
 };
@@ -39,26 +43,32 @@ var getWeatherInfo = function () {
 getWeatherInfo();
 
 function app(data) {
-	var appView = new AppView('ul', data);
+	var appView = new AppView('div', data);
 	appView.render();
 	document.body.appendChild(appView.element);
 };
+
 
 function View (tagName, data) {
 	this.element = document.createElement(tagName);
 	this.data = data;
 };
 
+
 function AppView () {
 	View.apply(this, arguments);
 };
 
 AppView.prototype = Object.create(View.prototype)
+
 AppView.prototype.render = function () {
-	for (i = 0; i < data.list.length; i++) {
-		test = new ForecastView('li', this.data[i])
+	for (var i = 0; i < this.data.length; i++) {
+		view = new ForecastView('div', this.data[i]);
+		view.render();
+		this.element.appendChild(view.element);
 	}
 };
+
 
 
 function ForecastView () {
@@ -66,6 +76,23 @@ function ForecastView () {
 };
 
 ForecastView.prototype = Object.create(View.prototype)
+
 ForecastView.prototype.render = function () {
-	this.element.textContent = this.data.name;
+	this.element.innerHTML =
+		'<h4>' + this.data.name + '</h4>' +
+		'<p>' + toTitleCase(this.data.weather[0].description) + '</p>' +
+		'<p>' + this.data.wind.speed + ' MPH ' + degreeConv(this.data.wind.deg) + '</p>' + 
+		'<p>' + toF(this.data.main.temp_max) + '</p>' + 
+		'<p>' + toF(this.data.main.temp_min) + '</p>';
+
+	this.bindEvents();
 };
+
+
+ForecastView.prototype.bindEvents = function () {
+	var _this = this;
+	this.element.addEventListener('click', function (){
+		_this.element.classList.toggle('expanded');
+	});
+};
+
