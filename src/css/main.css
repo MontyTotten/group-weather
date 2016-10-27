@@ -1,0 +1,39 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+.cf:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+.no-styles {
+	list-style-type: none;
+}
+
+h3,
+.temp,
+.wind-desc,
+h1,
+#day-time,
+.desc {
+	display: inline-block;
+}
+
+
+section {
+	background-color: #00bdf1;
+	margin: 10px;
+}
+
+button,
+.wind-desc,
+.temp {
+	float: right;
+}
