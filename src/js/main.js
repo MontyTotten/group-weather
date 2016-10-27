@@ -38,10 +38,10 @@ var getWeatherInfo = function () {
 
 getWeatherInfo();
 
-function main(data) {
-	var mainView = new MainView('ul', data);
-	mainView.render();
-	document.body.appendChild(mainView.element);
+function app(data) {
+	var appView = new AppView('ul', data);
+	appView.render();
+	document.body.appendChild(appView.element);
 };
 
 function View (tagName, data) {
@@ -49,12 +49,12 @@ function View (tagName, data) {
 	this.data = data;
 };
 
-function MainView () {
+function AppView () {
 	View.apply(this, arguments);
 };
 
-MainView.prototype = Object.create(View.prototype)
-MainView.prototype.render = function () {
+AppView.prototype = Object.create(View.prototype)
+AppView.prototype.render = function () {
 	for (i = 0; i < data.list.length; i++) {
 		test = new ForecastView('li', this.data[i])
 	}
