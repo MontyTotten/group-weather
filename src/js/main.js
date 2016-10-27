@@ -6,7 +6,7 @@ function toF (kelvin) {
 	return result.toFixed(); 
 };
 
-function degreeConversion (value) {
+function degreeConv (value) {
     if (value === 0) {
         return 'N';
     } else if (value > 0 && value < 90) {
