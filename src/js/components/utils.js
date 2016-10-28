@@ -1,5 +1,5 @@
 var utils = {
-    degreeConv: function degreeConv (value) {
+    degreeConv: function (value) {
         if (value === 0) {
             return 'N';
         } else if (value > 0 && value < 90) {
@@ -22,5 +22,9 @@ var utils = {
         var result = 0;     
         result = kelvin * 9/5 - 459.67;     
         return result.toFixed(); 
+    },
+    toTitleCase: function (str) {
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
     }
 };
+
