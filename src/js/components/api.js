@@ -11,3 +11,8 @@ var api = {
 		});
 	}
 };
+
+// lat lon of other places with a greater variance in weather information/city
+
+// Galapagos: lat=-0.9&lon=-90.9
+// Northern Alaska: lat=69.0&lon=-158.6 
