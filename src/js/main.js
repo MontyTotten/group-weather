@@ -54,8 +54,8 @@ ForecastView.prototype.render = function () {
 		'<h4>' + this.data.name + '</h4>' +
 		'<p>' + utils.toTitleCase(this.data.weather[0].description) + '</p>' +
 		'<p>' + this.data.wind.speed + ' MPH ' + utils.degreeConv(this.data.wind.deg) + '</p>' + 
-		'<p>' + 'Max: ' + utils.toF(this.data.main.temp_max) + '</p>' + 
-		'<p>' + 'Min: ' + utils.toF(this.data.main.temp_min) + '</p>';
+		'<p>' + 'High: ' + utils.toF(this.data.main.temp_max) + '</p>' + 
+		'<p>' + 'Low: ' + utils.toF(this.data.main.temp_min) + '</p>';
 
 	this.bindEvents();
 };
