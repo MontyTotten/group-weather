@@ -18,8 +18,23 @@ ul {
 }
 
 body {
-	background-color: #eeeafb;
+	position: relative;
 }
+
+body:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: url('../../Fall_skyline_of_Columbia_SC_from_Arsenal_Hill.jpg');
+	background-size: cover;
+	z-index: -1;
+	opacity: 0.4;
+	
+}
+
 
 h3,
 .temp,
@@ -33,9 +48,9 @@ h1,
 
 section {
 	margin: 10px;
-	border-radius: 50px;
-	position: relative;
-	z-index: 1;
+	/*border-radius: 50px;*/
+	/*position: relative;
+	z-index: 1;*/
 
 }
 
@@ -53,18 +68,6 @@ h3 {
 	text-align: right;
 }
 
-.photo:after {
-	content: '';
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-image: url('../../partly-cloudy.jpg');
-	z-index: -1;
-	opacity: 0.6;
-	border-radius: 20px;
-}
 
 
 
