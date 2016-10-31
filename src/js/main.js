@@ -93,8 +93,14 @@ ForecastView.prototype.bindEvents = function () {
 	this.elemnet
 };
 
+function showTime (date) {
+	var formatted = date.toLocaleString()
+	document.querySelector('#date').innerHTML = formatted;
+};
 
-
+setInterval(function () {
+	showTime(new Date())
+}, 1000);
 
 
 
