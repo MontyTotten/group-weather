@@ -79,9 +79,6 @@ body {
 /* End of LOADING ANIMATION*/
 
 
-
-
-
 .cf:after {
 	content: "";
 	display: block;
@@ -97,14 +94,9 @@ ul {
 	list-style-type: none;
 }
 
-
 body {
-
 	background-color: #173753;
-
-	
 }
-
 
 h3,
 .temp,
@@ -117,19 +109,13 @@ h1,
 	display: inline-block;
 }
 
-
-/*section {
-	margin: 10px;
-	
-
-}*/
-
 .city-info {
   height: 80px;
   padding: 0 1em;
   white-space: nowrap;
   margin-bottom: 10px;
   box-sizing: content-box;
+  border: 3px solid #eee;
 }
 
 .city-info:after {
@@ -199,6 +185,7 @@ section {
 
 /* --- END FONT FAMILIES ---*/
 
+
 .city-info,
 .temp,
 .wind-desc {
@@ -228,13 +215,6 @@ div.sun svg {
   height: 100%;
 }
 
-.wind svg {
-  width: 100%;
-  height: 100%;
-
-}
-
-
 .wind-desc,
 .temp {
   width: 50%;
@@ -246,7 +226,8 @@ div.sun svg {
   border-left: none;
 }
 
-.temp {
+.temp,
+.temp-container {
   float: left;
 
 }
@@ -262,18 +243,8 @@ div.sun svg {
   display: block;
 }
 
-.temp-container {
-  float: left;
-  /*margin: 5px;*/
-}
-
 .wind-container {
   float: right;
-  /*margin: 5px;*/
-}
-
-.city-info {
-  border: 3px solid #eee;
 }
 
 article {
@@ -286,6 +257,7 @@ section.main-sections {
   min-width: 380px;
 }
 
+/* --- MEDIA QUERIES --- */
 
 @media (min-width: 700px) {
 
@@ -293,7 +265,6 @@ section.main-sections {
   .wind-container {
     display: block;
   }
-
 }
 
 @media (min-width: 1000px) {
@@ -306,6 +277,7 @@ section.main-sections {
     clear: left;
   }
 }
+
 
 
 
