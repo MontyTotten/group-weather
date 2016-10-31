@@ -180,14 +180,14 @@ section {
 .city-info,
 .temp,
 .wind-desc {
-  background-color: #ADC8DB;
+  background-color: #6DAEDB;
 }
 
 .thermometer,
 .wind {
   width: 50%;
   height: 70px;
-  background-color: #ADC8DB;
+  background-color: #6DAEDB;
   float: left; 
   fill: #eee;
   padding: 5px 0;
