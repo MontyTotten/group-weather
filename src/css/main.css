@@ -124,19 +124,41 @@ h1,
 
 }*/
 
+.city-info {
+  height: 80px;
+  padding: 0 1em;
+  white-space: nowrap;
+  margin-bottom: 10px;
+  box-sizing: content-box;
+}
+
+.city-info:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
 h3,
-.desc {
-	width: 30%;
+.desc,
+div.sun {
+	width: 33.333%;
+  float: left;
+  line-height: 80px;
+  height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 h3 {
-	padding: 15px 0;
-	padding-left: 5%;
+  margin: 0;
 }
 
 .desc {
-	text-align: right;
-  margin-right: 20px;
+	text-align: center;
+}
+
+div.sun {
+  text-align: right;
 }
 
 
@@ -194,14 +216,9 @@ section {
   border: 3px solid #eee;
 }
 
-div.sun {
-  width: 65px;
-  height: 65px;
-  float: right;
-  margin-top: 10px;
-  margin-right: 3%;
+div.sun svg {
   fill: #eee;
-
+  width: 65px;
 }
 
 .thermometer svg,
@@ -237,8 +254,6 @@ div.sun {
 .temp-container,
 .wind-container {
   width: 49%;
-  margin: 0;
-  margin-top: 10px;
   display: none;
 }
 
@@ -274,15 +289,6 @@ section.main-sections {
 
 @media (min-width: 700px) {
 
-  section.main-sections {
-    width: 49%;
-    min-width: 640px;
-    display: inline-block;
-    margin: 0 auto;
-    margin-left: 8px;
-    margin-bottom: 15px;
-  }
-
   .temp-container,
   .wind-container {
     display: block;
@@ -290,7 +296,16 @@ section.main-sections {
 
 }
 
-
+@media (min-width: 1000px) {
+  section.main-sections {
+    width: 50%;
+    float: left;
+    padding: 0.5em;
+  }
+  section.main-sections:nth-child(2n + 1) {
+    clear: left;
+  }
+}
 
 
 
