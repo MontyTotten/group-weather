@@ -239,6 +239,12 @@ div.sun {
   width: 49%;
   margin: 0;
   margin-top: 10px;
+  display: none;
+}
+
+.expanded > .temp-container,
+.expanded > .wind-container {
+  display: block;
 }
 
 .temp-container {
@@ -270,19 +276,19 @@ section.main-sections {
 
   section.main-sections {
     width: 49%;
-    min-width: 440px;
+    min-width: 640px;
     display: inline-block;
     margin: 0 auto;
     margin-left: 8px;
     margin-bottom: 15px;
   }
 
+  .temp-container,
+  .wind-container {
+    display: block;
+  }
+
 }
-
-
-
-
-
 
 
 
